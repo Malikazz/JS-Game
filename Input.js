@@ -1,5 +1,5 @@
  function Input(){
- 
+    let timeOne = 1000;
  //Tests if a key is down then if the player is on the play screen, then looks for keycodes and adds or subtracts to move charcter.
     this.inputTest = function() {
          if (keyIsPressed === true){
@@ -26,14 +26,16 @@
                 player.x = player.x + player.xSpeed;
             }
             
-            //shoots bullet by making it active maybe need more here
-            if (keyCode == 32){
+            //shoots bullet by making it active maybe need more here, checks time to slow bullet shooting.
+            
+            if (keyIsDown (32) &&  millis() - timeOne >= 250){
                 console.log("SHOOT")
                 let a = bullet.length;
                 for (i = 0; i < a; i++){
                     console.log(bullet[i]);
                     if(bullet[i].isActive === false){
                         bullet[i].isActive = true;
+                        timeOne = millis();
                         break;
                     }
                 }

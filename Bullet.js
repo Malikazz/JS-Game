@@ -4,7 +4,7 @@ function Bullet(x, y){
     this.isActive = false;
     
     this.move = function(){
-        if (this.isActive === true && this.x <= gameWidth && this.x >= 0 && this.y >= 0 && this.y <= gameHeight){ 
+        if (this.isActive === true && this.x <= gameWidth && this.x >= 0 && this.y >= 0 && this.y <= gameHeight){
         this.y = this.y - 2;
         }
         else if(this.x < 0 || this.x > gameWidth || this.y < 0 || this.y > gameHeight){
