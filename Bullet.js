@@ -3,6 +3,7 @@ function Bullet(x, y){
     this.y = y;
     this.isActive = false;
     
+    //Moves the bullet up till the end of the screen
     this.move = function(){
         if (this.isActive === true && this.x <= gameWidth && this.x >= 0 && this.y >= 0 && this.y <= gameHeight){
         this.y = this.y - 2;

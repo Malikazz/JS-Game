@@ -13,7 +13,8 @@ function setup() {
         bullet.push(new Bullet(player.x,player.y));
     }
         for(i = 0; i <= 5; i++){
-        enemy.push(new Enemy(enemy.xRange, enemy.yRange));
+        enemy.push(new Enemy(1, 10));
+        console.log(enemy[i])
         }
     input = new Input();
     bulletLength = bullet.length;
@@ -22,7 +23,7 @@ function setup() {
 //Base Function for P5
 function draw() {
     background(169, 169, 169);
-    player.draw();
+    player.show();
     for (i = 0; i < enemy.length; i++){
         enemy[i].show();
         enemy[i].move();
