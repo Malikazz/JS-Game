@@ -1,7 +1,7 @@
 //creates the player and keeps track of location
 function Player() {
-    this.xSpeed = 1;
-    this.ySpeed = -1;
+    this.xSpeed = 2;
+    this.ySpeed = -2;
     this.x = gameWidth / 2;
     this.y = gameHeight / 2;
     

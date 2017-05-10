@@ -5,6 +5,7 @@ var gameWidth = 400;
 var bullet = [];
 let test = true;
 let bulletLength;
+
 // base function for p5
 function setup() {
     createCanvas(gameWidth, gameHeight);
@@ -12,10 +13,10 @@ function setup() {
     for(i = 0; i <= 50; i++){
         bullet.push(new Bullet(player.x,player.y));
     }
-        for(i = 0; i <= 5; i++){
+    for(i = 0; i <= 5; i++){
         enemy.push(new Enemy(1, 10));
         console.log(enemy[i])
-        }
+    }
     input = new Input();
     bulletLength = bullet.length;
 }

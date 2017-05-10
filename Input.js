@@ -12,7 +12,7 @@
             }
             
             //move down
-            if (keyIsDown (40) && player.y < 790){
+            if (keyIsDown (40) && player.y < gameHeight - 10){
                 player.y = player.y - player.ySpeed;
             }
             
@@ -22,7 +22,7 @@
             }
 
             //move right
-            if (keyIsDown (39) && player.x < 790){
+            if (keyIsDown (39) && player.x < gameWidth - 10){
                 player.x = player.x + player.xSpeed;
             }
             

@@ -1,4 +1,4 @@
-function Bullet(x, y){
+function Bullet(x,y){
     this.x = x;
     this.y = y;
     this.isActive = false;
