@@ -6,7 +6,18 @@ function Bullet(x,y){
     //Moves the bullet up till the end of the screen
     this.move = function(){
         if (this.isActive === true && this.x <= gameWidth && this.x >= 0 && this.y >= 0 && this.y <= gameHeight){
-        this.y = this.y - 2;
+            this.y = this.y - 2;
+            //for(i = 0; i < enemyLength; i++){
+              //  if (this.x - enemy[i].x <= 1 && this.y - enemy[i].y <= 1){
+               // console.log("HIT" + enemy[i]);
+               // this.isActive = false;
+               // enemy[i].isActive = false;
+               // break;
+               // enemy[i].x = enemy[i].spawnX;
+                //enemy[i].y = enemy[i].spawnY;
+                //console.log(enemy[i].x + enemy[i].y);
+               // }    
+           // }
         }
         else if(this.x < 0 || this.x > gameWidth || this.y < 0 || this.y > gameHeight){
             this.x = player.x + 5;

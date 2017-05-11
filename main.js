@@ -5,20 +5,22 @@ var gameWidth = 400;
 var bullet = [];
 let test = true;
 let bulletLength;
+let enemyLength;
 
 // base function for p5
 function setup() {
     createCanvas(gameWidth, gameHeight);
     player = new Player();
+        for(i = 0; i <= 1; i++){
+        enemy.push(new Enemy(1, 10));
+    }
+    
     for(i = 0; i <= 50; i++){
         bullet.push(new Bullet(player.x,player.y));
     }
-    for(i = 0; i <= 5; i++){
-        enemy.push(new Enemy(1, 10));
-        console.log(enemy[i])
-    }
     input = new Input();
     bulletLength = bullet.length;
+    enemyLength = enemy.length;
 }
 
 //Base Function for P5
@@ -31,7 +33,7 @@ function draw() {
     }
     for (i = 0; i < bulletLength; i++){
         bullet[i].show();
-        bullet[i].move();
+        bullet[i].move(); 
     }
     input.inputTest();
 }

@@ -1,10 +1,10 @@
  function Input(){
     let timeOne = 1000;
- //Tests if a key is down then if the player is on the play screen, then looks for keycodes and adds or subtracts to move charcter.
+ //Tests if a key is down then if the player is on the play screen, then looks for keycodes and adds or subtracts to move charcter. Also checks for spacebar and if its pressed it fires bullets on a 1/4 sec timer.
     this.inputTest = function() {
          if (keyIsPressed === true){
             
-            console.log("x = " + player.x+ " y = " + player.y)
+            //console.log("x = " + player.x+ " y = " + player.y)
             
             // move up
             if (keyIsDown(38) && player.y > 0){
@@ -32,7 +32,6 @@
                 console.log("SHOOT")
                 let a = bullet.length;
                 for (i = 0; i < a; i++){
-                    console.log(bullet[i]);
                     if(bullet[i].isActive === false){
                         bullet[i].isActive = true;
                         timeOne = millis();
