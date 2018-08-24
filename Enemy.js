@@ -6,6 +6,8 @@ function Enemy(x,y){
     this.isActive = true;
     let eWidth = 30;
     let eHeight = 30;
+    this.enemyCenterX = this.x + 15;
+    this.enemyCenterY = this.y - 15;
     let spawnX = x;
     let spawnY = y;
     
@@ -21,6 +23,7 @@ function Enemy(x,y){
     this.move = function(){
         if (this.isActive === true && millis() - timeOne >= eSpeed && this.x + eWidth < gameWidth && this.y < gameHeight + eHeight){
             this.x = this.x + 1;
+
         
         }
         
@@ -34,5 +37,7 @@ function Enemy(x,y){
             this.y = 10;
             //console.log("It happened" + this.x + this.y + this.isActive)
         }
+        this.enemyCenterX = this.x + 15;
+        this.enemyCenterY = this.y - 15;
     }
 }

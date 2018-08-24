@@ -11,7 +11,7 @@ function Bullet(x,y){
              //   console.log("Y Dif: ", this.y - enemy[i].y,  "X Dif: ",  this.x - enemy[i].x)
           //  }
             for(i = 0; i < enemyLength; i++){
-                if (this.x - enemy[i].x <= 5 && this.x - enemy[i].x >= -5 && this.y - enemy[i].y <= 5 && this.y - enemy[i].y >= -5 && enemy[i].isActive === true){
+                if (this.x - enemy[i].enemyCenterX <= 15 && this.x - enemy[i].enemyCenterX >= -15 && this.y - enemy[i].enemyCenterY <= 15 && this.y - enemy[i].enemyCenterY >= -15 && enemy[i].isActive === true){
                 console.log("HIT" + enemy[i]);
                 this.isActive = false;
                 enemy[i].isActive = false;
