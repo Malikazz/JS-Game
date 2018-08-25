@@ -9,18 +9,20 @@ let enemyLength;
 let spawnX = 1;
 let spawnY =10;
 // base function for p5
+
+let input = new Input();
 function setup() {
     createCanvas(gameWidth, gameHeight);
     player = new Player();
-        for(i = 0; i < 4; i++){
+        for(let i = 0; i < 4; i++){
         enemy.push(new Enemy(spawnX, spawnY));
         spawnX += 50;
     }
     
-    for(i = 0; i <= 50; i++){
+    for(let i = 0; i < 4; i++){
         bullet.push(new Bullet(player.x,player.y));
     }
-    input = new Input();
+
     bulletLength = bullet.length;
     enemyLength = enemy.length;
 }
@@ -29,11 +31,11 @@ function setup() {
 function draw() {
     background(169, 169, 169);
     player.show();
-    for (i = 0; i < enemy.length; i++){
+    for (let i = 0; i < enemy.length; i++){
         enemy[i].show();
         enemy[i].move();
     }
-    for (i = 0; i < bulletLength; i++){
+    for (let i = 0; i < bulletLength; i++){
         bullet[i].show();
         bullet[i].move(); 
     }
