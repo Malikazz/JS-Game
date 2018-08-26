@@ -12,7 +12,7 @@ let spawnY =10;
 
 let input = new Input();
 function setup() {
-    createCanvas(gameWidth, gameHeight);
+    this.createCanvas(gameWidth, gameHeight);
     player = new Player();
         for(let i = 0; i < 4; i++){
         enemy.push(new Enemy(spawnX, spawnY));
@@ -25,7 +25,7 @@ function setup() {
 
     bulletLength = bullet.length;
     enemyLength = enemy.length;
-}
+};
 
 //Base Function for P5
 function draw() {
@@ -40,7 +40,7 @@ function draw() {
         bullet[i].move(); 
     }
     input.inputTest();
-}
+};
     
 
 

@@ -27,7 +27,7 @@ function Bullet(x,y){
             this.x = player.x + 5;
             this.y = player.y;
         }
-    }
+    };
     
     //show bullet
     this.show = function (){
@@ -35,5 +35,5 @@ function Bullet(x,y){
         fill(255);
         rect(this.x, this.y, 1, 3);
         }   
-    }
+    };
 }

@@ -39,5 +39,5 @@ function Enemy(x,y){
         }
         this.enemyCenterX = this.x + 15;
         this.enemyCenterY = this.y - 15;
-    }
+    };
 }
