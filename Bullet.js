@@ -16,10 +16,11 @@ function Bullet(x,y){
                     && enemy[i].isActive === true){
                 console.log("HIT" + enemy[i]);
                 this.isActive = false;
+                this.x = player.x + 5;
+                this.y = player.y;
                 enemy[i].isActive = false;
                 console.log(enemy[i]);
                 break;
-
                 }
             }
         }

@@ -39,7 +39,6 @@ function draw() {
         bullet[i].show();
         bullet[i].move(); 
     }
-    input.inputTest();
 };
     
 
