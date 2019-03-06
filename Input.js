@@ -1,6 +1,10 @@
 function Input(){
-    let timeOne = 1000;
- //Tests if a key is down then if the player is on the play screen, then looks for keycodes and adds or subtracts to move charcter. Also checks for spacebar and if its pressed it fires bullets on a 1/4 sec timer.
+    //Starts with an off set of 1000 milliseconds
+    let beginingTimeOffSet = 1000;
+    let timeOne = beginingTimeOffSet;
+ //Tests if a key is down then if the player is on the play screen, 
+ //then looks for keycodes and adds or subtracts to move charcter. 
+ //Also checks for spacebar and if its pressed it fires bullets on a 1/4 sec timer.
     this.inputTest = function() {
          if (keyIsPressed === true){
             
@@ -26,9 +30,10 @@ function Input(){
                 player.x = player.x + player.xSpeed;
             }
             
-            //shoots bullet by making it active maybe need more here, checks time to slow bullet shooting.
+            //Shoots bullet by making it active maybe need more here, 
+            //checks time to slow bullet shooting.
             
-            if (keyIsDown (32) &&  millis() - timeOne >= 250){
+            if (keyIsDown (32) &&  millis() - timeOne >= 500){
                 console.log("SHOOT");
                 let a = bullet.length;
                 for (i = 0; i < a; i++){
