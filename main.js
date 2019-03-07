@@ -13,7 +13,7 @@ let spawnY =10;
 let input = new Input();
 function setup() 
 {
-    score = new Score(100,15);
+    score = new Score(100,15, gameWidth, gameHeight);
     // this creates a gameboard with Canvas
     this.createCanvas(gameWidth, gameHeight);
     //This makes a new player 

@@ -15,6 +15,7 @@ function Bullet(x,y){
                     && this.y - enemy[i].enemyCenterY >= -5 
                     && enemy[i].isActive === true){
                 console.log("HIT" + enemy[i]);
+                score.KilledEnemy();
                 this.isActive = false;
                 this.x = player.x + 5;
                 this.y = player.y;
