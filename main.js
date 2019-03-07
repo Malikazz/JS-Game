@@ -13,6 +13,7 @@ let spawnY =10;
 let input = new Input();
 function setup() 
 {
+    score = new Score(100,15);
     // this creates a gameboard with Canvas
     this.createCanvas(gameWidth, gameHeight);
     //This makes a new player 
@@ -49,6 +50,7 @@ function draw()
     //Runs show fuction and move fuction for each enemy
     for (let i = 0; i < enemy.length; i++)
     {
+        
         //If any enemy has died respawn him at the start
         if(enemy[i].isActive)
         {
@@ -70,6 +72,7 @@ function draw()
         bullet[i].move(); 
     }
     input.inputTest();
+    score.DisplayScore();
 };
     
 
