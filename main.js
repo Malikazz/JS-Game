@@ -11,31 +11,61 @@ let spawnY =10;
 // base function for p5
 
 let input = new Input();
-function setup() {
+function setup() 
+{
+    // this creates a gameboard with Canvas
     this.createCanvas(gameWidth, gameHeight);
+    //This makes a new player 
     player = new Player();
-        for(let i = 0; i < 4; i++){
+    //This creates the enemy(s)
+    for(let i = 0; i < 4; i++)
+    {
         enemy.push(new Enemy(spawnX, spawnY));
         spawnX += 50;
     }
-    
-    for(let i = 0; i < 4; i++){
+    // Creates Bullets for the play to use
+    for(let i = 0; i < 4; i++)
+    {
         bullet.push(new Bullet(player.x,player.y));
     }
 
+    //Dont remeber what this does will have to read through code
+    //to understand
     bulletLength = bullet.length;
     enemyLength = enemy.length;
 };
 
 //Base Function for P5
-function draw() {
+function draw() 
+{
+    //Color for Canvas
     background(169, 169, 169);
+    //Calls show function in player
+    // Currently not testing a move function anywere for player
+    // Probably because the place is moved by input and not on 
+    // a turn based fuction
     player.show();
-    for (let i = 0; i < enemy.length; i++){
-        enemy[i].show();
-        enemy[i].move();
+
+    //Runs show fuction and move fuction for each enemy
+    for (let i = 0; i < enemy.length; i++)
+    {
+        //If any enemy has died respawn him at the start
+        if(enemy[i].isActive)
+        {
+            enemy[i].show();
+            enemy[i].move();
+        }
+        else
+        {
+            enemy[i].x = spawnX
+            enemy[i].y = spawnY
+            enemy[i].isActive = true;
+        }
     }
-    for (let i = 0; i < bulletLength; i++){
+
+    // runs show fuction and move fucntion for each enemy
+    for (let i = 0; i < bulletLength; i++)
+    {
         bullet[i].show();
         bullet[i].move(); 
     }
