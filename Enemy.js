@@ -44,9 +44,9 @@ function Enemy(x,y){
             this.isActive = false;
             this.x = 1;
             this.y = 10;
-            //console.log("It happened" + this.x + this.y + this.isActive)
+            
         }
-        // wtf does this do 
+        // Resets the value of the center of the enemy after moving it
         this.enemyCenterX = this.x + 15;
         this.enemyCenterY = this.y + 15;
     };

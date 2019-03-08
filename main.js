@@ -13,7 +13,9 @@ let spawnY =10;
 let input = new Input();
 function setup() 
 {
+    
     score = new Score(100,15, gameWidth, gameHeight);
+    difficulty = new Difficulty(score.PointToDisplay)
     // this creates a gameboard with Canvas
     this.createCanvas(gameWidth, gameHeight);
     //This makes a new player 
@@ -73,6 +75,7 @@ function draw()
     }
     input.inputTest();
     score.DisplayScore();
+    difficulty.ModifyDifficulty(score.PointToDisplay)
 };
     
 
