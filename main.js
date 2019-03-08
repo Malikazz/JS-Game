@@ -8,6 +8,7 @@ let bulletLength;
 let enemyLength;
 let spawnX = 1;
 let spawnY =10;
+let Difficulty = 1;
 // base function for p5
 
 let input = new Input();
@@ -15,7 +16,7 @@ function setup()
 {
     
     score = new Score(100,15, gameWidth, gameHeight);
-    difficulty = new Difficulty(score.PointToDisplay)
+    difficulty = new Difficulty()
     // this creates a gameboard with Canvas
     this.createCanvas(gameWidth, gameHeight);
     //This makes a new player 
@@ -41,6 +42,11 @@ function setup()
 //Base Function for P5
 function draw() 
 {
+    if(Difficulty < score.PointToDisplay / 1000)
+    {
+        Difficulty += 1;
+        enemy.push(new Enemy(1,10));
+    }
     //Color for Canvas
     background(169, 169, 169);
     //Calls show function in player
@@ -73,8 +79,11 @@ function draw()
         bullet[i].show();
         bullet[i].move(); 
     }
+    //Tests if keys are held and runs functions if so
     input.inputTest();
+    //Redraws score 
     score.DisplayScore();
+    //Checks current score and adds more enemys or bosses
     difficulty.ModifyDifficulty(score.PointToDisplay)
 };
     

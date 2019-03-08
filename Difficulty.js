@@ -1,11 +1,10 @@
-function Difficulty(score){
-    this.Score = score;
-    this.modifier = 0;
+function Difficulty(){
+    this.modifier = 1;
 
-    this.ModifyDifficulty = function()
+    this.ModifyDifficulty = function(score)
     {
-        modifier = Score / 1000;
-        if (modifier < 1)
+        this.modifier += score / 1000;
+        if (this.modifier > 1)
         {
             console.log("New Enemy")
             enemy.push(new Enemy(1,10))
