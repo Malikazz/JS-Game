@@ -7,10 +7,15 @@ function Enemy(x,y){
     let eWidth = 30;
     let eHeight = 30;
     this.enemyCenterX = this.x + 15;
-    this.enemyCenterY = this.y - 15;
+    this.enemyCenterY = this.y + 15;
     let spawnX = x;
     let spawnY = y;
     
+    //Creates a bubble colider and takes care of state
+    this.collide = function()
+    {
+
+    }
     // Shows the enemy if they is no enemy present at the spawn
     this.show = function(){
         if(this.isActive === true){
@@ -20,24 +25,29 @@ function Enemy(x,y){
     };
 
     //moves right till it hits the end then moves down
-    this.move = function(){
-        if (this.isActive === true && millis() - timeOne >= eSpeed && this.x + eWidth < gameWidth && this.y < gameHeight + eHeight){
+    this.move = function()
+    {
+        if (this.isActive === true && millis() - timeOne >= eSpeed && this.x + eWidth < gameWidth && this.y < gameHeight + eHeight)
+        {
             this.x = this.x + 1;
 
         
         }
         
-        else if (this.isActive === true && millis() - timeOne >= eSpeed && this.x + eWidth >= gameWidth - 1){
+        else if (this.isActive === true && millis() - timeOne >= eSpeed && this.x + eWidth >= gameWidth - 1)
+        {
             this.y = this.y + eHeight;
             this.x = 1;
         }
-        else if (this.isActive === true && millis() - timeOne >= eSpeed && this.y + eHeight >= gameHeight){
+        else if (this.isActive === true && millis() - timeOne >= eSpeed && this.y + eHeight >= gameHeight)
+        {
             this.isActive = false;
             this.x = 1;
             this.y = 10;
             //console.log("It happened" + this.x + this.y + this.isActive)
         }
+        // wtf does this do 
         this.enemyCenterX = this.x + 15;
-        this.enemyCenterY = this.y - 15;
+        this.enemyCenterY = this.y + 15;
     };
 }

@@ -23,8 +23,8 @@ function Score (startingScore,textSize, gameWidth, gameHeight){
 
     this.DisplayScore = function ()
     {
-        fill(0)
-        text("Points: " + PointsToDisplay, 5, GameHeight -5)
+        fill(0);
+        text("Points: " + PointsToDisplay, 5, GameHeight -5);
     };
 
 
